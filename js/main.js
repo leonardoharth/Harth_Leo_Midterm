@@ -10,15 +10,7 @@ var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{
   ext: 'png'
 }).addTo(map);
 
-
-
-
 var dataset = "https://raw.githubusercontent.com/leonardoharth/MUSA611-CPLN692-week7/master/assignment/data/Litter_Index_Blocks.geojson";
-
-
-
-
-
 
 var featureGroup;
 
