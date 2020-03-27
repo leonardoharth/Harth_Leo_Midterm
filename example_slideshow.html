@@ -1,0 +1,54 @@
+<html>
+  <div id="sidebar" style="position: absolute; top:0; left: 0; width: 400px; height: 100%; background-color: red">
+    <h1 id="title">Title</h1>
+    <p id="description">This is the description</p>
+    <button id="nextButton">next</button>
+  </div>
+  <div id="map" style="position: absolute; top:0; height: 100%; right: 0; left: 400">
+
+    <h1>IM A MAP</h1>
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+  <script>
+    // slide model:
+    // a title
+    // a description
+    // background color
+    var slides = [
+      { title: "title1", description: "the first description", color: "#FFFF00" },
+      { title: "title2", description: "the second description", color: "#FF00FF" },
+      { title: "title3", description: "the first description", color: "#00FFFF" },
+      { title: "made up title", description: "made up description", color: "#F0F0F0" }
+    ]
+    var currentSlide = 0
+
+    var loadSlide = function(slide) {
+      $('#title').text(slide.title)
+      $('#description').text(slide.description)
+      $('#sidebar').css("background-color", slide.color)
+    }
+
+    var next = function() {
+      if (currentSlide == slides.length - 1) {
+      } else {
+        $('#nextButton').show()
+        currentSlide = currentSlide + 1
+        loadSlide(slides[currentSlide])
+      }
+
+      if (currentSlide == slides.length - 1) {
+        $('#nextButton').hide()
+      }
+    }
+
+    $('#nextButton').click(function(e) {
+      next()
+    });
+
+  </script>
+</html>
