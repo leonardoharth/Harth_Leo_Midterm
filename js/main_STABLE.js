@@ -42,7 +42,19 @@ var get_color = function(entry) {
   } else {
       return "#000000";
   }
-};
+}
+
+// var plot_markers = function(data) {
+//   data.forEach(function(entry) {
+//     var lat = parseFloat(entry['latitude']);
+//     var lon = parseFloat(entry['longitude']);
+//     var size_circle = parseFloat(entry['siteenergyuse_kbtu']);
+//     var scaled_size;
+//     if (size_circle > 4469990) { scaled_size = 800} else { scaled_size = size_circle / 5588}
+//     var color = get_color(entry);
+//     L.circle([lat, lon], scaled_size, {color: color, stroke: false, fillOpacity: .6}).addTo(map).bindPopup(entry['buildingname']);
+//   });
+// };
 
 // var plot_markers = function(data) {
 //   data.forEach(function(entry) {
@@ -67,26 +79,14 @@ var get_color = function(entry) {
 //   });
 // };
 
-// var plot_markers = function(data) {
-//   data.forEach(function(entry) {
-//     var lat = parseFloat(entry['latitude']);
-//     var lon = parseFloat(entry['longitude']);
-//     var size_circle = parseFloat(entry['ghgemissionsintensity']);
-//     var scaled_size = size_circle*30;
-//     var color = get_color(entry);
-//     L.circle([lat, lon], scaled_size, {color: color, stroke: false, fillOpacity: .6}).addTo(map).bindPopup("Building Name: " + entry['buildingname'] + '</br>' + "Year Built: " + entry['yearbuilt'] + '</br>' + "Number of Floors: " + entry['numberoffloors'] + '</br>' + "Total Sqft. Area: " + entry['propertygfatotal'] + '</br>' + "Energy STAR Score: " + entry['energystarscore']);
-//   });
-// };
-
 var plot_markers = function(data) {
   data.forEach(function(entry) {
     var lat = parseFloat(entry['latitude']);
     var lon = parseFloat(entry['longitude']);
-    var color;
-    if (entry['compliancestatus'] === "Compliant") { color = "green"} else { color = "red"};
-    var opc;
-    if (entry['compliancestatus'] === "Compliant") { opc = .25} else { opc = .8};
-    L.circle([lat, lon], 70, {color: color, stroke: false, fillOpacity: opc}).addTo(map).bindPopup("Building Name: " + entry['buildingname'] + '</br>' + "Year Built: " + entry['yearbuilt'] + '</br>' + "Number of Floors: " + entry['numberoffloors'] + '</br>' + "Total Sqft. Area: " + entry['propertygfatotal'] + '</br>' + "Energy STAR Score: " + entry['energystarscore']);
+    var size_circle = parseFloat(entry['ghgemissionsintensity']);
+    var scaled_size = size_circle*30;
+    var color = get_color(entry);
+    L.circle([lat, lon], scaled_size, {color: color, stroke: false, fillOpacity: .6}).addTo(map).bindPopup("Building Name: " + entry['buildingname'] + '</br>' + "Year Built: " + entry['yearbuilt'] + '</br>' + "Number of Floors: " + entry['numberoffloors'] + '</br>' + "Total Sqft. Area: " + entry['propertygfatotal'] + '</br>' + "Energy STAR Score: " + entry['energystarscore']);
   });
 };
 
