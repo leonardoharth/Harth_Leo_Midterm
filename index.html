@@ -10,27 +10,21 @@
   <body>
     <!-- Sidebar -->
     <div class="sidebar">
-      <div id="intro">
+      <div>
         <h1>Building Energy Benchmark in Seattle (2018)</h1>
-        <p class="main">This city of Seattle collects information
+        <p class="main" id="part01">This city of Seattle collects information
         about its buildings energy consumption, for different
         sources of energy.</p>
-        <p>This application shows some of those measurements and
-        benchmarks, according to the building type.</p>
+        <p id="part02">This application shows some of those measurements and
+        benchmarks, according to the building type. Please click the "Next" button below to start the slideshow."</p>
       </div>
-      <div id="results" style="display: none;">
-        <h1 class="day-of-week">Day of Week</h1>
-        <p class="main">Your garbage collection day is <span class="day-of-week">
-        Day of Week</span>.</p>
-        <p>Please be sure to leave your garbage outside on <span class="day-of-week">
-        Day of Week</span>. If this week is a federal holiday, leave your
-        garbage outside on the following day.</p>
-      </div>
+      <button id="nextButton">Next</button>
     </div>
     <!-- Map -->
     <div id="map" class="map"></div>
     <!-- Legend -->
-    <div class="legend"></div>
+    <div class="legend">
+    </div>
     <!-- Javascript Imports -->
     <!-- <script src="js/energy.js"></script> -->
     <script src="js/jquery-2.2.0.js"></script>
