@@ -18,13 +18,40 @@
         <p id="part02">This application shows some of those measurements and
         benchmarks, according to the building type. Please click the "Next" button below to start the slideshow."</p>
       </div>
+      <button id="previousButton">Previous</button>
       <button id="nextButton">Next</button>
     </div>
     <!-- Map -->
     <div id="map" class="map"></div>
     <!-- Legend -->
-    <div class="legend">
-    </div>
+    <!-- The template for this legend was obtained here: https://tilemill-project.github.io/tilemill/docs/guides/advanced-legends/  -->
+      <div class="legend" id="legend_bldtype">
+        <div class='my-legend'>
+          <div class='legend-title'>Building Types</div>
+          <div class='legend-scale'>
+            <ul class='legend-labels'>
+              <li><span style='background:#a6bddb;'></span>Non Residential Building</li>
+              <li><span style='background:#ff7f00;'></span>Residential Building</li>
+              <li><span style='background:#6a51a3;'></span>Institutional Building</li>
+              <li><span style='background:#000000;'></span>Campus</li>
+              <li><span style='background:#addd8e;'></span>School</li>
+            </ul>
+          </div>
+          <div class='legend-source'>Source: <a href="https://data.seattle.gov/dataset/2018-Building-Energy-Benchmarking/7rac-kyay">Seattle Open Data</a></div>
+        </div>
+      </div>
+      <div class="legend" id="legend_compliance">
+        <div class='my-legend'>
+          <div class='legend-title'>Compliance Status</div>
+          <div class='legend-scale'>
+            <ul class='legend-labels'>
+              <li><span style='background:#2ca25f;'></span>Compliant</li>
+              <li><span style='background:#de2d26;'></span>Non Compliant</li>
+            </ul>
+          </div>
+          <div class='legend-source'>Source: <a href="https://data.seattle.gov/dataset/2018-Building-Energy-Benchmarking/7rac-kyay">Seattle Open Data</a></div>
+        </div>
+      </div>
     <!-- Javascript Imports -->
     <!-- <script src="js/energy.js"></script> -->
     <script src="js/jquery-2.2.0.js"></script>
